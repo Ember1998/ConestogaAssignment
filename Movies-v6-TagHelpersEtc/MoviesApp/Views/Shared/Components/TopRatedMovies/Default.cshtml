@@ -1,0 +1,10 @@
+﻿@model TopRatedMoviesViewModel
+
+<h3>Top-Rated Movies</h3>
+<h6>With a rating of at least @Model.LowestRating</h6>
+<ul>
+    @for (int i = 0; i < Math.Min(Model.NumberOfMoviesToDisplay, Model.Movies.Count); i++)
+    {
+        <li>@Model.Movies[i].Name (@Model.Movies[i].Year @Model.Movies[i].Genre.Name)</li>
+    }
+</ul>
